@@ -7,6 +7,7 @@
     <style>
         :root {
             --primary: #00d4ff;
+            --accent: #00ff88;
             --bg: #121212;
             --card-bg: #1e1e1e;
             --text: #ffffff;
@@ -30,18 +31,22 @@
 
         header {
             text-align: center;
-            padding: 80px 0;
-            background: linear-gradient(135deg, #1e1e1e 0%, #121212 100%);
+            padding: 100px 0;
+            background: radial-gradient(circle at center, #1e1e1e 0%, #121212 100%);
             border-bottom: 2px solid var(--primary);
         }
 
-        h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
-        .subtitle { color: var(--primary); font-weight: bold; text-transform: uppercase; margin-top: 10px; }
+        .subtitle { 
+            color: var(--primary); 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
 
-        section { margin: 60px 0; }
-        h2 { border-left: 4px solid var(--primary); padding-left: 15px; margin-bottom: 30px; }
+        section { margin: 80px 0; }
+        h2 { border-left: 4px solid var(--primary); padding-left: 15px; margin-bottom: 40px; }
 
-        /* Grid System */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -50,60 +55,47 @@
 
         .card {
             background: var(--card-bg);
-            padding: 25px;
-            border-radius: 12px;
+            padding: 30px;
+            border-radius: 15px;
             border: 1px solid #333;
+            transition: all 0.3s ease;
         }
 
-        /* Skill Bar Animations */
-        .skill-label { display: flex; justify-content: space-between; font-size: 0.9rem; margin-top: 15px; }
-        .skill-bar-container { background: #333; border-radius: 10px; height: 8px; margin-top: 5px; overflow: hidden; }
-        
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
+
+        /* Skill Bars */
+        .skill-label { display: flex; justify-content: space-between; font-size: 0.9rem; margin-top: 20px; }
+        .skill-bar-container { background: #333; border-radius: 10px; height: 8px; margin-top: 8px; overflow: hidden; }
         .skill-per {
             height: 100%;
             background: var(--primary);
-            border-radius: 10px;
             box-shadow: 0 0 10px var(--primary);
-            width: 0; /* Start at 0 for animation */
+            width: 0;
             animation: fillBars 2s forwards;
         }
 
-        @keyframes fillBars {
-            to { width: var(--target-width); }
+        @keyframes fillBars { to { width: var(--target-width); } }
+
+        /* Certification Badge */
+        .cert-badge {
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--accent);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid var(--accent);
         }
 
-        /* Contact Form */
-        .contact-form {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group { margin-bottom: 20px; }
-        label { display: block; margin-bottom: 5px; color: var(--text-secondary); }
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            background: #2a2a2a;
-            border: 1px solid #444;
-            border-radius: 6px;
-            color: white;
-            box-sizing: border-box;
-        }
-
-        button {
+        .contact-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
             background: var(--primary);
             color: #000;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 6px;
+            text-decoration: none;
+            border-radius: 5px;
             font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.2s;
         }
-        button:hover { transform: scale(1.05); background: #00b8e6; }
 
         footer { text-align: center; padding: 40px; border-top: 1px solid #333; color: var(--text-secondary); }
     </style>
@@ -113,17 +105,30 @@
 <header>
     <div class="container">
         <h1>PARESH KUMAR HANSDA</h1>
-        <p class="subtitle">Electrical Engineer & Web Developer</p>
+        <p class="subtitle">Electrical Engineer | Web Developer | SEBI Certified</p>
+        <p>Deoghar, Jharkhand | 8969172592</p>
+        <a href="mailto:mystylepkh@gmail.com" class="contact-btn">Hire Me</a>
     </div>
 </header>
 
 <div class="container">
-    <section id="skills">
-        <h2>Expertise & Proficiency</h2>
+    
+    <section id="expertise">
+        <h2>Expertise & Certifications</h2>
         <div class="grid">
             <div class="card">
-                <h3>Electrical Design</h3>
-                <div class="skill-label"><span>AutoCAD Mastery</span><span>90%</span></div>
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 15px;">
+                    <h3 style="margin:0">Finance</h3>
+                    <span class="cert-badge">SEBI / NISM</span>
+                </div>
+                <p><strong>Investor Certification Examination</strong></p>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">Successfully cleared the NISM-Series certification with a score of 44/50 (88%).</p>
+                <p style="font-size: 0.8rem; color: var(--accent);">Registration: NISM20250000104655</p>
+            </div>
+
+            <div class="card">
+                <h3 style="margin-bottom: 15px;">Engineering</h3>
+                <div class="skill-label"><span>AutoCAD</span><span>90%</span></div>
                 <div class="skill-bar-container"><div class="skill-per" style="--target-width: 90%;"></div></div>
                 
                 <div class="skill-label"><span>Electrical Wiring</span><span>85%</span></div>
@@ -131,40 +136,47 @@
             </div>
 
             <div class="card">
-                <h3>Digital Development</h3>
-                <div class="skill-label"><span>HTML5 / CSS3</span><span>85%</span></div>
+                <h3 style="margin-bottom: 15px;">Development</h3>
+                <div class="skill-label"><span>HTML/CSS</span><span>85%</span></div>
                 <div class="skill-bar-container"><div class="skill-per" style="--target-width: 85%;"></div></div>
                 
-                <div class="skill-label"><span>Web Design</span><span>75%</span></div>
+                <div class="skill-label"><span>UI Design</span><span>75%</span></div>
                 <div class="skill-bar-container"><div class="skill-per" style="--target-width: 75%;"></div></div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Get In Touch</h2>
-        <div class="contact-form">
-            <form action="mailto:mystylepkh@gmail.com" method="post" enctype="text/plain">
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" name="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <label>Message</label>
-                    <textarea name="message" rows="5" placeholder="How can I help you?"></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
+    <section id="experience">
+        <h2>Professional Journey</h2>
+        <div class="card" style="width: 100%; box-sizing: border-box;">
+            <h3>Krishnan Design Pvt Ltd</h3>
+            <p style="color: var(--primary);">Technical Associate & AutoCAD Instructor</p>
+            <ul>
+                <li>Conducted professional training sessions on AutoCAD software.</li>
+                <li>Managed electrical wiring and minor fault diagnosis.</li>
+                <li>Developed internal web tools for project management.</li>
+            </ul>
         </div>
     </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="grid">
+            <div class="card">
+                <h4>B.Tech Electrical</h4>
+                <p>Dumka Engineering College<br>2018 - 2022</p>
+            </div>
+            <div class="card">
+                <h4>Diploma Electrical</h4>
+                <p>Govt. Polytechnic Dumka<br>Graduated 2017</p>
+            </div>
+        </div>
+    </section>
+
 </div>
 
 <footer>
-    <p>&copy; 2025 Paresh Kumar Hansda | 8969172592</p>
+    <p>&copy; 2025 Paresh Kumar Hansda | Built with HTML & CSS</p>
 </footer>
 
 </body>
