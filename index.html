@@ -3,181 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paresh Kumar Hansda | Portfolio</title>
+    <title>Resume - Paresh Kumar Hansda</title>
     <style>
-        :root {
-            --primary: #00d4ff;
-            --accent: #00ff88;
-            --bg: #121212;
-            --card-bg: #1e1e1e;
-            --text: #ffffff;
-            --text-secondary: #b0b0b0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            margin: 0;
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        header {
-            text-align: center;
-            padding: 100px 0;
-            background: radial-gradient(circle at center, #1e1e1e 0%, #121212 100%);
-            border-bottom: 2px solid var(--primary);
-        }
-
-        .subtitle { 
-            color: var(--primary); 
-            font-weight: bold; 
-            text-transform: uppercase; 
-            letter-spacing: 2px;
-            margin-top: 10px;
-        }
-
-        section { margin: 80px 0; }
-        h2 { border-left: 4px solid var(--primary); padding-left: 15px; margin-bottom: 40px; }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid #333;
-            transition: all 0.3s ease;
-        }
-
-        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
-
-        /* Skill Bars */
-        .skill-label { display: flex; justify-content: space-between; font-size: 0.9rem; margin-top: 20px; }
-        .skill-bar-container { background: #333; border-radius: 10px; height: 8px; margin-top: 8px; overflow: hidden; }
-        .skill-per {
-            height: 100%;
-            background: var(--primary);
-            box-shadow: 0 0 10px var(--primary);
-            width: 0;
-            animation: fillBars 2s forwards;
-        }
-
-        @keyframes fillBars { to { width: var(--target-width); } }
-
-        /* Certification Badge */
-        .cert-badge {
-            background: rgba(0, 255, 136, 0.1);
-            color: var(--accent);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            border: 1px solid var(--accent);
-        }
-
-        .contact-btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 30px;
-            background: var(--primary);
-            color: #000;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        footer { text-align: center; padding: 40px; border-top: 1px solid #333; color: var(--text-secondary); }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: auto; padding: 20px; background-color: #f4f4f4; }
+        .container { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; margin-bottom: 5px; }
+        h2 { border-bottom: 2px solid #3498db; color: #3498db; padding-bottom: 5px; margin-top: 30px; }
+        .contact-info { margin-bottom: 20px; font-style: italic; }
+        .project, .cert { margin-bottom: 15px; }
+        .title { font-weight: bold; color: #2c3e50; }
+        .institution { color: #7f8c8d; }
+        .date { float: right; color: #7f8c8d; }
+        .tag { background: #e1f5fe; color: #01579b; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; margin-right: 5px; }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <h1>PARESH KUMAR HANSDA</h1>
-        <p class="subtitle">Electrical Engineer | Web Developer | SEBI Certified</p>
-        <p>Deoghar, Jharkhand | 8969172592</p>
-        <a href="mailto:mystylepkh@gmail.com" class="contact-btn">Hire Me</a>
-    </div>
-</header>
-
 <div class="container">
+    <h1>Paresh Kumar Hansda</h1>
+    <div class="contact-info">
+        Python & Django Developer | Electrical Engineering Enthusiast<br>
+        Portfolio: <a href="https://digifile.pythonanywhere.com/">digifile.pythonanywhere.com</a>
+    </div>
+
+    <h2>Professional Projects</h2>
+    <div class="project">
+        <span class="date">Active</span>
+        <div class="title">DigiFile - Secure Document Locker</div>
+        <p>Developed a full-stack Django application to securely store and manage sensitive documents (Identity cards, Residential, Caste, and Income certificates).</p>
+        <ul>
+            <li>Implemented full CRUD (Create, Read, Update, Delete) functionality for document management.</li>
+            <li><strong>Security:</strong> Integrated SSL encryption and architected data privacy so that user files remain inaccessible to administrators.</li>
+            <li><strong>Deployment:</strong> Hosted and maintained on PythonAnywhere.</li>
+        </ul>
+        <span class="tag">Django</span> <span class="tag">Python</span> <span class="tag">SSL</span> <span class="tag">Cybersecurity</span>
+    </div>
+
+    <h2>University Certifications</h2>
     
-    <section id="expertise">
-        <h2>Expertise & Certifications</h2>
-        <div class="grid">
-            <div class="card">
-                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 15px;">
-                    <h3 style="margin:0">Finance</h3>
-                    <span class="cert-badge">SEBI / NISM</span>
-                </div>
-                <p><strong>Investor Certification Examination</strong></p>
-                <p style="font-size: 0.9rem; color: var(--text-secondary);">Successfully cleared the NISM-Series certification with a score of 44/50 (88%).</p>
-                <p style="font-size: 0.8rem; color: var(--accent);">Registration: NISM20250000104655</p>
-            </div>
+    <div class="cert">
+        <span class="date">Nov 18, 2020</span>
+        [span_3](start_span)<div class="title">Electric Power Systems[span_3](end_span)</div>
+        [span_4](start_span)<div class="institution">University at Buffalo, The State University of New York[span_4](end_span)</div>
+        [span_5](start_span)<p>Authorized by University at Buffalo and offered through Coursera.[span_5](end_span)</p>
+    </div>
 
-            <div class="card">
-                <h3 style="margin-bottom: 15px;">Engineering</h3>
-                <div class="skill-label"><span>AutoCAD</span><span>90%</span></div>
-                <div class="skill-bar-container"><div class="skill-per" style="--target-width: 90%;"></div></div>
-                
-                <div class="skill-label"><span>Electrical Wiring</span><span>85%</span></div>
-                <div class="skill-bar-container"><div class="skill-per" style="--target-width: 85%;"></div></div>
-            </div>
+    <div class="cert">
+        <span class="date">Nov 9, 2020</span>
+        [span_6](start_span)<div class="title">Programming for Everybody (Getting Started with Python)[span_6](end_span)</div>
+        [span_7](start_span)<div class="institution">University of Michigan[span_7](end_span)</div>
+        [span_8](start_span)<p>Authorized by University of Michigan and offered through Coursera.[span_8](end_span)</p>
+    </div>
 
-            <div class="card">
-                <h3 style="margin-bottom: 15px;">Development</h3>
-                <div class="skill-label"><span>HTML/CSS</span><span>85%</span></div>
-                <div class="skill-bar-container"><div class="skill-per" style="--target-width: 85%;"></div></div>
-                
-                <div class="skill-label"><span>UI Design</span><span>75%</span></div>
-                <div class="skill-bar-container"><div class="skill-per" style="--target-width: 75%;"></div></div>
-            </div>
-        </div>
-    </section>
+    <div class="cert">
+        <span class="date">Sep 28, 2020</span>
+        [span_9](start_span)<div class="title">Mind Control: Managing Your Mental Health During COVID-19[span_9](end_span)</div>
+        [span_10](start_span)<div class="institution">University of Toronto[span_10](end_span)</div>
+        [span_11](start_span)<p>Authorized by University of Toronto and offered through Coursera.[span_11](end_span)</p>
+    </div>
 
-    <section id="experience">
-        <h2>Professional Journey</h2>
-        <div class="card" style="width: 100%; box-sizing: border-box;">
-            <h3>Krishnan Design Pvt Ltd</h3>
-            <p style="color: var(--primary);">Technical Associate & AutoCAD Instructor</p>
-            <ul>
-                <li>Conducted professional training sessions on AutoCAD software.</li>
-                <li>Managed electrical wiring and minor fault diagnosis.</li>
-                <li>Developed internal web tools for project management.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="education">
-        <h2>Education</h2>
-        <div class="grid">
-            <div class="card">
-                <h4>B.Tech Electrical</h4>
-                <p>Dumka Engineering College<br>2018 - 2022</p>
-            </div>
-            <div class="card">
-                <h4>Diploma Electrical</h4>
-                <p>Govt. Polytechnic Dumka<br>Graduated 2017</p>
-            </div>
-        </div>
-    </section>
-
+    <h2>Technical Skills</h2>
+    <ul>
+        <li><strong>Languages/Frameworks:</strong> Python, Django, HTML5, CSS3.</li>
+        [span_12](start_span)<li><strong>Engineering:</strong> Electric Power Systems Analysis.[span_12](end_span)</li>
+        <li><strong>Tools:</strong> PythonAnywhere Deployment, SSL Implementation, Database Management.</li>
+    </ul>
 </div>
-
-<footer>
-    <p>&copy; 2025 Paresh Kumar Hansda | Built with HTML & CSS</p>
-</footer>
 
 </body>
 </html>
